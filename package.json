@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/basir/mern-amazona/issues"
   },
-  "homepage": "https://github.com/basir/mern-amazona#readme"
+  "homepage": "https://github.com/basir/mern-amazona#readme",
+  "devDependencies": {
+    "cypress": "^13.10.0"
+  }
 }

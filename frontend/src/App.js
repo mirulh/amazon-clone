@@ -102,9 +102,15 @@ function App() {
                     )}
                   </Link>
                   {userInfo ? (
-                    <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                    <NavDropdown
+                      title={userInfo.name}
+                      id="basic-nav-dropdown"
+                      data-test="cy-navLink"
+                    >
                       <LinkContainer to="/profile">
-                        <NavDropdown.Item>User Profile</NavDropdown.Item>
+                        <NavDropdown.Item data-test="cy-profileLink">
+                          User Profile
+                        </NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/orderhistory">
                         <NavDropdown.Item>Order History</NavDropdown.Item>
@@ -114,6 +120,7 @@ function App() {
                         className="dropdown-item"
                         to="#signout"
                         onClick={signoutHandler}
+                        data-test="cy-signoutLink"
                       >
                         Sign Out
                       </Link>

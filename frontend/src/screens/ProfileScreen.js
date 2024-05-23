@@ -74,6 +74,7 @@ export default function ProfileScreen() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            data-test="cy-name"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="name">
@@ -83,6 +84,7 @@ export default function ProfileScreen() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            data-test="cy-email"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
@@ -90,6 +92,7 @@ export default function ProfileScreen() {
           <Form.Control
             type="password"
             onChange={(e) => setPassword(e.target.value)}
+            data-test="cy-password"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
@@ -97,10 +100,13 @@ export default function ProfileScreen() {
           <Form.Control
             type="password"
             onChange={(e) => setConfirmPassword(e.target.value)}
+            data-test="cy-confirmPassword"
           />
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Update</Button>
+          <Button type="submit" data-test="cy-submitUpdate">
+            Update
+          </Button>
         </div>
       </form>
     </div>

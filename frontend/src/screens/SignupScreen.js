@@ -57,7 +57,11 @@ export default function SignupScreen() {
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="name">
           <Form.Label>Name</Form.Label>
-          <Form.Control onChange={(e) => setName(e.target.value)} required />
+          <Form.Control
+            onChange={(e) => setName(e.target.value)}
+            required
+            data-test="cy-name"
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="email">
@@ -66,6 +70,7 @@ export default function SignupScreen() {
             type="email"
             required
             onChange={(e) => setEmail(e.target.value)}
+            data-test="cy-email"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
@@ -74,6 +79,7 @@ export default function SignupScreen() {
             type="password"
             required
             onChange={(e) => setPassword(e.target.value)}
+            data-test="cy-password"
           />
           <Form.Group className="mb-3" controlId="confirmPassword">
             <Form.Label>Confirm Password</Form.Label>
@@ -81,11 +87,14 @@ export default function SignupScreen() {
               type="password"
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
+              data-test="cy-confirmPassword"
             />
           </Form.Group>
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Sign Up</Button>
+          <Button type="submit" data-test="cy-submitSignup">
+            Sign Up
+          </Button>
         </div>
         <div className="mb-3">
           Already have an account?{' '}

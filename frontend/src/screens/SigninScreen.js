@@ -51,6 +51,7 @@ export default function SigninScreen() {
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
+            data-test="cy-email"
             type="email"
             required
             onChange={(e) => setEmail(e.target.value)}
@@ -59,13 +60,16 @@ export default function SigninScreen() {
         <Form.Group className="mb-3" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
+            data-test="cy-password"
             type="password"
             required
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Sign In</Button>
+          <Button data-test="cy-submitLogin" type="submit">
+            Sign In
+          </Button>
         </div>
         <div className="mb-3">
           New customer?{' '}
