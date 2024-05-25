@@ -28,17 +28,17 @@ Cypress.Commands.add('getDataTest', (dataTestSelector) => {
   return cy.get(`[data-test="${dataTestSelector}"]`);
 });
 
-Cypress.Commands.add('login', (username, password) => {
+Cypress.Commands.add('login', (email, password) => {
   cy.session(
-    [username, password],
+    [email, password],
     () => {
       cy.visit('/signin');
-      cy.getDataTest('cy-email').type('ali@gmail.com');
-      cy.getDataTest('cy-password').type('password123');
+      cy.getDataTest('cy-email').type(email);
+      cy.getDataTest('cy-password').type(password);
       cy.getDataTest('cy-submitLogin').click();
       cy.url().should('match', /\/$/);
-    },
+    }
     // allow to cache new user for next session (utilize for admin test cases)
-    { cacheAcrossSpecs: true }
+    // { cacheAcrossSpecs: true }
   );
 });

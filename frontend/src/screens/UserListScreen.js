@@ -122,6 +122,7 @@ export default function UserListScreen() {
                     type="button"
                     variant="light"
                     onClick={() => navigate(`/admin/user/${user._id}`)}
+                    data-test="cyA-editButton"
                   >
                     Edit
                   </Button>
@@ -130,6 +131,7 @@ export default function UserListScreen() {
                     type="button"
                     variant="light"
                     onClick={() => deleteHandler(user)}
+                    data-test="cyA-deleteButton"
                   >
                     Delete
                   </Button>

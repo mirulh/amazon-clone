@@ -143,7 +143,11 @@ export default function ProductListScreen() {
         </Col>
         <Col className="col text-end">
           <div>
-            <Button type="button" onClick={createHandler}>
+            <Button
+              type="button"
+              onClick={createHandler}
+              data-test="cyA-createProductButton"
+            >
               Create Product
             </Button>
           </div>
@@ -183,6 +187,7 @@ export default function ProductListScreen() {
                       type="button"
                       variant="light"
                       onClick={() => navigate(`/admin/product/${product._id}`)}
+                      data-test="cyA-editProductButton"
                     >
                       Edit
                     </Button>
@@ -191,6 +196,7 @@ export default function ProductListScreen() {
                       type="button"
                       variant="light"
                       onClick={() => deleteHandler(product)}
+                      data-test="cyA-deleteProductButton"
                     >
                       Delete
                     </Button>

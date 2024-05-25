@@ -132,6 +132,7 @@ export default function OrderListScreen() {
                     onClick={() => {
                       navigate(`/order/${order._id}`);
                     }}
+                    data-test="cyA-detailsButton"
                   >
                     Details
                   </Button>
@@ -140,6 +141,7 @@ export default function OrderListScreen() {
                     type="button"
                     variant="light"
                     onClick={() => deleteHandler(order)}
+                    data-test="cyA-deleteButton"
                   >
                     Delete
                   </Button>

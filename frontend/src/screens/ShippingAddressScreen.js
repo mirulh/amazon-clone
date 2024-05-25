@@ -73,6 +73,7 @@ export default function ShippingAddressScreen() {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               required
+              data-test="cy-fullName"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="address">
@@ -81,6 +82,7 @@ export default function ShippingAddressScreen() {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               required
+              data-test="cy-address"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="city">
@@ -89,6 +91,7 @@ export default function ShippingAddressScreen() {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               required
+              data-test="cy-cityName"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="postalCode">
@@ -97,6 +100,7 @@ export default function ShippingAddressScreen() {
               value={postalCode}
               onChange={(e) => setPostalCode(e.target.value)}
               required
+              data-test="cy-postalCode"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="country">
@@ -105,6 +109,7 @@ export default function ShippingAddressScreen() {
               value={country}
               onChange={(e) => setCountry(e.target.value)}
               required
+              data-test="cy-country"
             />
           </Form.Group>
           <div className="mb-3">
@@ -127,7 +132,11 @@ export default function ShippingAddressScreen() {
           </div>
 
           <div className="mb-3">
-            <Button variant="primary" type="submit">
+            <Button
+              variant="primary"
+              type="submit"
+              data-test="cy-submitAddress"
+            >
               Continue
             </Button>
           </div>

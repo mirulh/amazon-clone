@@ -1,4 +1,4 @@
-describe('View and Edit Profile test', () => {
+describe('View and Edit Profile - test', () => {
   beforeEach(() => {
     cy.login('ali@gmail.com', 'password123');
   });
@@ -29,5 +29,8 @@ describe('View and Edit Profile test', () => {
     cy.getDataTest('cy-name').type('Alan');
     cy.getDataTest('cy-email').type('alan@gmail.com');
     cy.getDataTest('cy-submitUpdate').click();
+    cy.contains('div', 'User updated successfully')
+      .should('have.text', 'User updated successfully')
+      .click();
   });
 });

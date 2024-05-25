@@ -108,6 +108,7 @@ export default function UserEditScreen() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
+              data-test="cyA-userName"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="email">
@@ -117,6 +118,7 @@ export default function UserEditScreen() {
               type="email"
               onChange={(e) => setEmail(e.target.value)}
               required
+              data-test="cyA-userEmail"
             />
           </Form.Group>
 
@@ -127,10 +129,15 @@ export default function UserEditScreen() {
             label="isAdmin"
             checked={isAdmin}
             onChange={(e) => setIsAdmin(e.target.checked)}
+            data-test="cyA-userIsAdmin"
           />
 
           <div className="mb-3">
-            <Button disabled={loadingUpdate} type="submit">
+            <Button
+              disabled={loadingUpdate}
+              type="submit"
+              data-test="cyA-updateButton"
+            >
               Update
             </Button>
             {loadingUpdate && <LoadingBox></LoadingBox>}

@@ -29,7 +29,7 @@ function Product(props) {
   };
 
   return (
-    <Card>
+    <Card data-test="cy-productCard">
       <Link to={`/product/${product.slug}`}>
         <img src={product.image} className="card-img-top" alt={product.name} />
       </Link>
@@ -44,7 +44,12 @@ function Product(props) {
             Out of stock
           </Button>
         ) : (
-          <Button onClick={() => addToCartHandler(product)}>Add to cart</Button>
+          <Button
+            onClick={() => addToCartHandler(product)}
+            data-test="addToCart"
+          >
+            Add to cart
+          </Button>
         )}
       </Card.Body>
     </Card>

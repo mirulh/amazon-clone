@@ -45,7 +45,7 @@ export default function CartScreen() {
       <Row>
         <Col md={8}>
           {cartItems.length === 0 ? (
-            <MessageBox>
+            <MessageBox data-test="cy-emptyAlert">
               Cart is empty. <Link to="/">Go Shopping</Link>
             </MessageBox>
           ) : (
@@ -68,6 +68,7 @@ export default function CartScreen() {
                         }
                         variant="light"
                         disabled={item.quantity === 1}
+                        data-test="cy-itemMinus"
                       >
                         <i className="fas fa-minus-circle"></i>
                       </Button>{' '}
@@ -78,6 +79,7 @@ export default function CartScreen() {
                           updateCartHandler(item, item.quantity + 1)
                         }
                         disabled={item.quantity === item.countInStock}
+                        data-test="cy-itemAdd"
                       >
                         <i className="fas fa-plus-circle"></i>
                       </Button>
@@ -87,6 +89,7 @@ export default function CartScreen() {
                       <Button
                         onClick={() => removeItemHandler(item)}
                         variant="light"
+                        data-test="cy-itemTrash"
                       >
                         <i className="fas fa-trash"></i>
                       </Button>
@@ -115,6 +118,7 @@ export default function CartScreen() {
                       variant="primary"
                       onClick={checkoutHandler}
                       disabled={cartItems.length === 0}
+                      data-test="cy-checkout"
                     >
                       Proceed to Checkout
                     </Button>

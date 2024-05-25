@@ -172,6 +172,7 @@ export default function ProductEditScreen() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
+              data-test="cyA-productName"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="slug">
@@ -180,6 +181,7 @@ export default function ProductEditScreen() {
               value={slug}
               onChange={(e) => setSlug(e.target.value)}
               required
+              data-test="cyA-productSlug"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="name">
@@ -188,6 +190,7 @@ export default function ProductEditScreen() {
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               required
+              data-test="cyA-productPrice"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="image">
@@ -196,11 +199,16 @@ export default function ProductEditScreen() {
               value={image}
               onChange={(e) => setImage(e.target.value)}
               required
+              data-test="cyA-productImage"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="imageFile">
             <Form.Label>Upload Image</Form.Label>
-            <Form.Control type="file" onChange={uploadFileHandler} />
+            <Form.Control
+              type="file"
+              onChange={uploadFileHandler}
+              data-test="cyA-uploadImage"
+            />
             {loadingUpload && <LoadingBox></LoadingBox>}
           </Form.Group>
 
@@ -233,6 +241,7 @@ export default function ProductEditScreen() {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               required
+              data-test="cyA-productCategory"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="brand">
@@ -241,6 +250,7 @@ export default function ProductEditScreen() {
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
               required
+              data-test="cyA-productBrand"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="countInStock">
@@ -249,6 +259,7 @@ export default function ProductEditScreen() {
               value={countInStock}
               onChange={(e) => setCountInStock(e.target.value)}
               required
+              data-test="cyA-productCount"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="description">
@@ -257,10 +268,15 @@ export default function ProductEditScreen() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
+              data-test="cyA-productDesc"
             />
           </Form.Group>
           <div className="mb-3">
-            <Button disabled={loadingUpdate} type="submit">
+            <Button
+              disabled={loadingUpdate}
+              type="submit"
+              data-test="cyA-submitUpdate"
+            >
               Update
             </Button>
             {loadingUpdate && <LoadingBox></LoadingBox>}

@@ -234,6 +234,7 @@ function ProductScreen() {
                   aria-label="Rating"
                   value={rating}
                   onChange={(e) => setRating(e.target.value)}
+                  data-test="cy-ratings"
                 >
                   <option value="">Select...</option>
                   <option value="1">1- Poor</option>
@@ -253,11 +254,16 @@ function ProductScreen() {
                   placeholder="Leave a comment here"
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
+                  data-test="cy-comment"
                 />
               </FloatingLabel>
 
               <div className="mb-3">
-                <Button disabled={loadingCreateReview} type="submit">
+                <Button
+                  disabled={loadingCreateReview}
+                  type="submit"
+                  data-test="cy-submitReview"
+                >
                   Submit
                 </Button>
                 {loadingCreateReview && <LoadingBox></LoadingBox>}

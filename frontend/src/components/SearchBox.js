@@ -24,9 +24,10 @@ export default function SearchBox() {
           placeholder="search products..."
           aria-label="Search Products"
           aria-describedby="button-search"
+          data-test="cy-search"
         ></FormControl>
         <Button variant="outline-primary" type="submit" id="button-search">
-          <i className="fas fa-search"></i>
+          <i className="fas fa-search" data-test="cy-searchButton"></i>
         </Button>
       </InputGroup>
     </Form>

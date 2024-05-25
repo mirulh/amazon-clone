@@ -138,7 +138,7 @@ export default function SearchScreen() {
         <Col md={3}>
           <h3>Department</h3>
           <div>
-            <ul>
+            <ul data-test="cy-department">
               <li>
                 <Link
                   className={'all' === category ? 'text-bold' : ''}
@@ -161,7 +161,7 @@ export default function SearchScreen() {
           </div>
           <div>
             <h3>Price</h3>
-            <ul>
+            <ul data-test="cy-price">
               <li>
                 <Link
                   className={'all' === price ? 'text-bold' : ''}
@@ -184,7 +184,7 @@ export default function SearchScreen() {
           </div>
           <div>
             <h3>Avg. Customer Review</h3>
-            <ul>
+            <ul data-test="cy-rating">
               {ratings.map((r) => (
                 <li key={r.name}>
                   <Link
@@ -229,7 +229,10 @@ export default function SearchScreen() {
                         variant="light"
                         onClick={() => navigate('/search')}
                       >
-                        <i className="fas fa-times-circle"></i>
+                        <i
+                          className="fas fa-times-circle"
+                          data-test="cy-clear"
+                        ></i>
                       </Button>
                     ) : null}
                   </div>
@@ -241,6 +244,7 @@ export default function SearchScreen() {
                     onChange={(e) => {
                       navigate(getFilterUrl({ order: e.target.value }));
                     }}
+                    data-test="cy-sortBy"
                   >
                     <option value="newest">Newest Arrivals</option>
                     <option value="lowest">Price: Low to High</option>

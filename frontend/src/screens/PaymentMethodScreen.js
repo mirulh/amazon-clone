@@ -45,6 +45,7 @@ export default function PaymentMethodScreen() {
               value="PayPal"
               checked={paymentMethodName === 'PayPal'}
               onChange={(e) => setPaymentMethod(e.target.value)}
+              data-test="cy-payment"
             />
           </div>
           <div className="mb-3">
@@ -55,10 +56,13 @@ export default function PaymentMethodScreen() {
               value="Stripe"
               checked={paymentMethodName === 'Stripe'}
               onChange={(e) => setPaymentMethod(e.target.value)}
+              data-test="cy-payment"
             />
           </div>
           <div className="mb-3">
-            <Button type="submit">Continue</Button>
+            <Button type="submit" data-test="cy-submitMethod">
+              Continue
+            </Button>
           </div>
         </Form>
       </div>

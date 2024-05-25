@@ -2,21 +2,22 @@ describe('Signup test', () => {
   beforeEach(() => {
     cy.visit('/signup');
   });
-  it('should show name, email, password and confirm password is required', () => {
+
+  it('should show input is required and should redirect user to the homepage after successful signup attempt', () => {
     cy.getDataTest('cy-submitSignup').click();
     cy.wait(500);
-    cy.getDataTest('cy-name').should('have.attr', 'required');
-    cy.getDataTest('cy-email').should('have.attr', 'required');
-    cy.getDataTest('cy-password').should('have.attr', 'required');
-    cy.getDataTest('cy-confirmPassword').should('have.attr', 'required');
-  });
-
-  it('should redirect user to the homepage after successful login attempt', () => {
-    cy.getDataTest('cy-name').type('Ali');
-    cy.getDataTest('cy-email').type('ali@gmail.com');
-    cy.getDataTest('cy-password').type('password123');
-    cy.getDataTest('cy-confirmPassword').type('password123');
+    cy.getDataTest('cy-name').type('Ali').should('have.attr', 'required');
+    cy.getDataTest('cy-email')
+      .type('ali@gmail.com')
+      .should('have.attr', 'required');
+    cy.getDataTest('cy-password')
+      .type('password123')
+      .should('have.attr', 'required');
+    cy.getDataTest('cy-confirmPassword')
+      .type('password123')
+      .should('have.attr', 'required');
     cy.getDataTest('cy-submitSignup').click();
+    cy.wait(500);
     cy.url().should('match', /\/$/);
   });
 });

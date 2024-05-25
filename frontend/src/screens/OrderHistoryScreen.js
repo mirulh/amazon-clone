@@ -91,6 +91,7 @@ export default function OrderHistoryScreen() {
                     onClick={() => {
                       navigate(`/order/${order._id}`);
                     }}
+                    data-test="cy-detailsButton"
                   >
                     Details
                   </Button>

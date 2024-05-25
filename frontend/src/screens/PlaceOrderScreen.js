@@ -179,6 +179,7 @@ export default function PlaceOrderScreen() {
                       type="button"
                       onClick={placeOrderHandler}
                       disabled={cart.cartItems.length === 0}
+                      data-test="cy-submitOrder"
                     >
                       Place Order
                     </Button>

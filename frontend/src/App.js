@@ -96,7 +96,7 @@ function App() {
                   <Link to="/cart" className="nav-link">
                     Cart
                     {cart.cartItems.length > 0 && (
-                      <Badge pill bg="danger">
+                      <Badge pill bg="danger" data-test="cy-badgeCart">
                         {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                       </Badge>
                     )}
@@ -112,7 +112,10 @@ function App() {
                           User Profile
                         </NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/orderhistory">
+                      <LinkContainer
+                        to="/orderhistory"
+                        data-test="cy-orderLink"
+                      >
                         <NavDropdown.Item>Order History</NavDropdown.Item>
                       </LinkContainer>
                       <NavDropdown.Divider />
@@ -131,17 +134,33 @@ function App() {
                     </Link>
                   )}
                   {userInfo && userInfo.isAdmin && (
-                    <NavDropdown title="Admin" id="admin-nav-dropdown">
-                      <LinkContainer to="/admin/dashboard">
+                    <NavDropdown
+                      title="Admin"
+                      id="admin-nav-dropdown"
+                      data-test="cyA-navLink"
+                    >
+                      <LinkContainer
+                        to="/admin/dashboard"
+                        data-test="cyA-dashboardLink"
+                      >
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/admin/products">
+                      <LinkContainer
+                        to="/admin/products"
+                        data-test="cyA-productLink"
+                      >
                         <NavDropdown.Item>Products</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/admin/orders">
+                      <LinkContainer
+                        to="/admin/orders"
+                        data-test="cyA-orderLink"
+                      >
                         <NavDropdown.Item>Orders</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/admin/users">
+                      <LinkContainer
+                        to="/admin/users"
+                        data-test="cyA-usersLink"
+                      >
                         <NavDropdown.Item>Users</NavDropdown.Item>
                       </LinkContainer>
                     </NavDropdown>
